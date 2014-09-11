@@ -25,6 +25,14 @@ font-family: 'Lato', sans-serif;
 
 }
 
+html {
+  background: url(images/background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .container{
 
 width: 300px !important;

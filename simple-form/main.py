@@ -31,7 +31,6 @@ width: 300px !important;
 height: 265px !important;
 margin-left: auto!important;
 margin-right: auto !important;
-margin-top: 15%;
 background: #fff !important;
 border-radius: 2px !important;
 }

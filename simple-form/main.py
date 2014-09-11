@@ -20,7 +20,18 @@ class MainHandler(webapp2.RequestHandler):
 <title>Welcome to my landing page</title>
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
 <style type="text/css">
+body{
+font-family: 'Lato', sans-serif;
 
+}
+
+.container{
+
+width: 500px;
+height: 500px;
+background: green;
+margin: 0 auto;
+}
 
 </style>
 '''

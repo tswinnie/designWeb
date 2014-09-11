@@ -27,10 +27,57 @@ font-family: 'Lato', sans-serif;
 
 .container{
 
-width: 500px;
-height: 500px;
-background: green;
-margin: 0 auto;
+width: 300px !important;
+height: 265px !important;
+margin-left: auto!important;
+margin-right: auto !important;
+margin-top: 15%;
+background: #fff !important;
+border-radius: 2px !important;
+}
+
+.topLabel {
+text-align: center !important;
+display: block !important;
+text-transform: uppercase !important;
+font-weight: bold !important;
+color: #282828 !important;
+padding-top: 20% !important;
+padding-bottom: 2% !important;
+}
+
+.userName {
+border: none !important;
+background: #eaedf2 !important;
+width: 215px !important;
+height: 33px !important;
+border-radius: 2px !important;
+margin-left: 40px !important;
+}
+
+.bottomLabel {
+text-align: center !important;
+display: block !important;
+text-transform: uppercase !important;
+font-weight: bold !important;
+color: #282828 !important;
+padding-top: 2% !important;
+padding-bottom: 2% !important;
+}
+
+
+.submitBTN{
+
+border: none;
+width: 150px;
+height: 35px;
+margin-left: 24%;
+margin-top: 19px;
+background: #4b93ff;
+border-radius: 2px !important;
+color: #fff;
+box-shadow: none !important;
+
 }
 
 </style>
@@ -40,28 +87,27 @@ margin: 0 auto;
 <div class="container">
 <form method ="GET" action="">
 <h2 id="titleText">We are Coming Soon!</h2>
-<label>First Name:</label><input type="text" name="first" /><br>
-<label>Last Name:</label><input type="text" name="last" /><br>
-<label>Email:</label><input type="text" name="email" /><br>
+<label class="topLabel">First Name:</label><input type="text" name="first" class= "userName" /><br>
+<label class="bottomLabel">Last Name:</label><input type="text" name="last"  class= "userName"/><br>
+<label class="bottomLabel">Email:</label><input type="text" name="email" class= "userName" /><br>
 
 
 
-<label>How Did You Hear About Us?:</label><select name="aboutus">
+<label class="bottomLabel">How Did You Hear About Us?:</label><select name="aboutus">
   <option  value="Online" >Online</option>
     <option  value="Friend" >Friend</option>
         <option  value="Other" >Other</option>
 </select>
 <br>
-<label>How Excited Are About This Site?:</label><select name="excited">
+<label class="bottomLabel">How Excited Are About This Site?:</label><select name="excited">
   <option  value="not really" > Not Really</option>
     <option  value="a little" >A Little</option>
         <option  value="very excited" >Very Excited</option>
 </select>
-<label>Send Me Email Updates:</label><input type="checkbox" name= "updates" value="send updates" /><br>
+<label class="bottomLabel">Send Me Email Updates:</label><input type="checkbox" name= "updates" value="send updates" /><br>
 
 <br>
-<input id="submit" type="submit" value="submit" />
-<h3 id="confirmation">Your Confirmation</h3>
+<input id="submit" type="submit" value="submit" class="submitBTN" />
 
 
 

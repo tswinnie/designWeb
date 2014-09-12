@@ -172,6 +172,7 @@ font-weight: 200;
 </body>
 </html>
         '''
+
    # I am going to store the information that are collected from the user into a variable
         if self.request.GET:
             first_name = self.request.GET['first']  # this gets the value for the first name
@@ -187,9 +188,6 @@ font-weight: 200;
         else:
             # if the user does not input any values then do this
             self.response.write(page_head + page_body + page_close)
-
-
-
 
 
 

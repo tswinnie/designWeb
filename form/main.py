@@ -170,7 +170,9 @@ font-weight: 200;
             excited = self.request.GET['excited']  # this gets the value to see if the user is excited
             updates = self.request.GET['updates']  # this gets value to see if the user wants you to send updates
             # return the values that the user put in the form after the submit button
+
             self.response.write(page_head + page_body + first_name + ' ' + last_name + ' ' + email + ' ' + about_us + ' ' + excited + ' ' + updates + page_close)
+
         else:
             # if the user does not input any values then do this
             self.response.write(page_head + page_body + page_close)

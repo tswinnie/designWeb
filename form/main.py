@@ -149,7 +149,16 @@ class MainHandler(webapp2.RequestHandler):
 #         else:
 #             # if the user does not input any values then do this
 #             self.response.write(page_head + page_body + page_close)
-#created a class that will hold my page for me
+
+
+
+
+
+
+# created a class that will hold my page for me
+
+
+
         p = Page()
         self.response.write(p.print_out())
 
@@ -166,10 +175,47 @@ class Page(object):
         <title>{self.title}</title>
     </head>
     <link href="{self.css}" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
 
     <body>
         """
-        self.body = "Welcome Tyrone TO My SIte"
+        self.body = """
+        <h2 id="titleText">We are Coming Soon!</h2>
+
+<div class="boxRight">
+
+<p>We are bringing the latest technology to you and developers alike. We will change the world and how it thinks aboutweb development.</p>
+<p>If you would like to know more about this new technology, please fill out the form and we will be in touch.</p>
+</div>
+
+<div class="container">
+<form method ="GET" action="">
+<label class="topLabel">First Name:</label><input type="text" name="first" class= "userName" /><br>
+<label class="bottomLabel">Last Name:</label><input type="text" name="last"  class= "userName"/><br>
+<label class="bottomLabel">Email:</label><input type="text" name="email" class= "userName" /><br>
+
+
+
+<label class="bottomLabel">How Did You Hear About Us?:</label><select name="aboutus" class= "userName">
+  <option  value="Online" >Online</option>
+    <option  value="Friend" >Friend</option>
+        <option  value="Other" >Other</option>
+</select>
+<br>
+<label class="bottomLabel">How Excited Are About This Site?:</label><select name="excited" class= "userName">
+  <option  value="not really" > Not Really</option>
+    <option  value="a little" >A Little</option>
+        <option  value="very excited" >Very Excited</option>
+</select>
+<label class="bottomLabel">Send Me Email Updates:</label><input type="checkbox" name= "updates" value="send updates"  style="position: relative; left: 39px;"/><br>
+
+<br>
+<input id="submit" type="submit" value="submit" class="submitBTN" />
+
+
+
+
+        """
         self.close = """
 
     </body>
@@ -179,6 +225,11 @@ class Page(object):
 
 
         """
+
+
+
+
+
 
     def print_out(self):
         all = self.head + self.body + self.close

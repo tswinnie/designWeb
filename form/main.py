@@ -126,6 +126,10 @@ font-weight: 200;
 
 }
 
+form{
+color: #fff !important;
+}
+
 </style>
 '''
         page_body = '''
@@ -163,6 +167,7 @@ font-weight: 200;
 <input id="submit" type="submit" value="submit" class="submitBTN" />
 
 
+<h3 class="titlePage" style="margin-top: -253px;">This is the info we got from you</h3>
 
 
         '''
@@ -183,7 +188,7 @@ font-weight: 200;
             updates = self.request.GET['updates']  # this gets value to see if the user wants you to send updates
             # return the values that the user put in the form after the submit button
 
-            self.response.write(page_head + page_body + first_name + ' ' + last_name + ' ' + email + ' ' + about_us + ' ' + excited + ' ' + updates + page_close)
+            self.response.write(page_head + page_body + first_name + ' '  ' '+ last_name + ' ' ' ' + email + ' ' ' ' + about_us + ' '' ' + excited + ' ' ' ' + updates + ' ' ' ' + page_close)
 
         else:
             # if the user does not input any values then do this

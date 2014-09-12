@@ -161,12 +161,7 @@ font-weight: 200;
 
 <br>
 <input id="submit" type="submit" value="submit" class="submitBTN" />
-<div class="resultsCon">
 
-
-
-
-</div>
 
 
 

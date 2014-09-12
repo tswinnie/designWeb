@@ -23,19 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="styles.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="styles.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="21" selection-start="1397" selection-end="1397" vertical-scroll-proportion="0.78971964" vertical-offset="588" max-vertical-offset="1395">
+            <state line="57" column="17" selection-start="1143" selection-end="1143" vertical-scroll-proportion="0.0" vertical-offset="588" max-vertical-offset="1395">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="209" column="156" selection-start="6470" selection-end="6470" vertical-scroll-proportion="0.0" vertical-offset="2971" max-vertical-offset="3915">
+            <state line="212" column="42" selection-start="6526" selection-end="6526" vertical-scroll-proportion="0.95230526" vertical-offset="2581" max-vertical-offset="3915">
               <folding />
             </state>
           </provider>
@@ -312,16 +312,16 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="156" selection-start="6470" selection-end="6470" vertical-scroll-proportion="0.0" vertical-offset="2971" max-vertical-offset="3915">
+        <state line="57" column="17" selection-start="1143" selection-end="1143" vertical-scroll-proportion="0.0" vertical-offset="588" max-vertical-offset="1395">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="21" selection-start="1397" selection-end="1397" vertical-scroll-proportion="0.78971964" vertical-offset="588" max-vertical-offset="1395">
+        <state line="212" column="42" selection-start="6526" selection-end="6526" vertical-scroll-proportion="0.95230526" vertical-offset="2581" max-vertical-offset="3915">
           <folding />
         </state>
       </provider>

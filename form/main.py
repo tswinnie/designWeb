@@ -35,8 +35,8 @@ html {
 
 .container{
 
-width: 300px !important;
-height: 265px !important;
+width: 650px !important;
+height: 325px !important;
 margin-left: auto!important;
 margin-right: auto !important;
 background: #fff !important;
@@ -73,18 +73,18 @@ padding-bottom: 2% !important;
 }
 
 
-.submitBTN{
-
+.submitBTN {
 border: none;
 width: 150px;
 height: 35px;
-margin-left: 24%;
+margin-left: 67%;
 margin-top: 19px;
 background: #4b93ff;
 border-radius: 2px !important;
 color: #fff;
 box-shadow: none !important;
-
+position: relative;
+top: -319px;
 }
 
 #bg {
@@ -103,6 +103,15 @@ margin: 0 auto;
 color: #fff;
 font-weight: 200;
 line-height: 1.5;
+padding: 10px;
+
+}
+
+.titlePage{
+text-align: center;
+font-size: 2.5em;
+color: #fff;
+font-weight: 200;
 
 }
 
@@ -110,7 +119,7 @@ line-height: 1.5;
 '''
         page_body = '''
 <body>
-        <h2 id="titleText">We are Coming Soon!</h2>
+        <h2 class="titlePage">We are Coming Soon!</h2>
 
 <div class="boxRight">
 
@@ -120,24 +129,24 @@ line-height: 1.5;
 
 <div class="container">
 <form method ="GET" action="">
-<label class="topLabel">First Name:</label><input type="text" name="first" class= "userName" /><br>
-<label class="bottomLabel">Last Name:</label><input type="text" name="last"  class= "userName"/><br>
-<label class="bottomLabel">Email:</label><input type="text" name="email" class= "userName" /><br>
+<label class="topLabel" style="position: relative; top: -120px; left: -167px; ">First Name:</label><input type="text" name="first" class= "userName" style="position: relative; top: -123px;"/><br>
+<label class="bottomLabel" style="position: relative; top: -120px; left: -167px; ">Last Name:</label><input type="text" name="last"  class= "userName" style="position: relative; top: -123px;"/><br>
+<label class="bottomLabel" style="position:relative; top: -283px; left: 165px;">Email:</label><input type="text" name="email" class= "userName" style="float:right; position: relative; top: -283px; margin-right: 50px;"/><br>
 
 
 
-<label class="bottomLabel">How Did You Hear About Us?:</label><select name="aboutus" class= "userName">
+<label class="bottomLabel" style="position:relative; top: -261px; left: 325px;">How Did You Hear About Us?:</label><select name="aboutus" class= "userName"  style="float:right; position: relative; top: -263px; margin-right: 50px;">
   <option  value="Online" >Online</option>
     <option  value="Friend" >Friend</option>
         <option  value="Other" >Other</option>
 </select>
 <br>
-<label class="bottomLabel">How Excited Are About This Site?:</label><select name="excited" class= "userName">
+<label class="bottomLabel" style="position:relative; top: -245px; left: 310px;">How Excited Are About This Site?:</label><select name="excited" class= "userName" style="position:relative; top: -248px; left: 345px;">
   <option  value="not really" > Not Really</option>
     <option  value="a little" >A Little</option>
         <option  value="very excited" >Very Excited</option>
 </select>
-<label class="bottomLabel">Send Me Email Updates:</label><input type="checkbox" name= "updates" value="send updates"  style="position: relative; left: 39px;"/><br>
+<label class="bottomLabel" style="position:relative; top: -325px; left: -171px;">Send Me Email Updates:</label><input type="checkbox" name= "updates" value="send updates" style="position:relative; top: -316px; left: 44px;" /><br>
 
 <br>
 <input id="submit" type="submit" value="submit" class="submitBTN" />

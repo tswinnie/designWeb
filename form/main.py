@@ -43,6 +43,17 @@ background: #fff !important;
 border-radius: 2px !important;
 }
 
+.resultsCon{
+
+width: 650px !important;
+height: 325px !important;
+margin-left: auto!important;
+margin-right: auto !important;
+background: #fff !important;
+border-radius: 2px !important;
+
+}
+
 .topLabel {
 text-align: center !important;
 display: block !important;
@@ -150,7 +161,12 @@ font-weight: 200;
 
 <br>
 <input id="submit" type="submit" value="submit" class="submitBTN" />
+<div class="resultsCon">
 
+
+
+
+</div>
 
 
 

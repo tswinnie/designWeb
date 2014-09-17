@@ -40,19 +40,19 @@ class Page(object):
 
     @property
     def title(self):
-        return self.__title
+        return self.__title  #this is returning the value of title
 
     @title.setter
     def title(self, new_title):
-        self.__title = new_title
+        self.__title = new_title  #this is setting the value of title to the value of the new title
 
     @property
     def css(self):
-        return self.__css
+        return self.__css  #this is returning the value of css
 
     @css.setter
     def css(self, new_css):
-        self.__css = new_css
+        self.__css = new_css  #this is setting the old value of css to the new value of css
 
 
 

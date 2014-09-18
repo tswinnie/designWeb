@@ -23,7 +23,7 @@ class MainHandler(webapp2.RequestHandler):
         # I will create an application that calculates the remaining storage for different users
 
         #now I will hard code the values for each data object
-        m = Michele()
+        m = Storage()
         m.pictures = 5
         m.videos = 10
         m.documents = 1
@@ -33,7 +33,7 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write("this is the result " + str(m.final_storage)) #writing the user_page which has has all the html for my application
 
 
-class Michele(object):
+class Storage(object):
     def __init__(self):
         self.pictures = 0  #the number of pictures in GB
         self.videos = 0  #the number of videos in GB

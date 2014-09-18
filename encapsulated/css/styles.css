@@ -1,3 +1,63 @@
 body{
+background: #25A3EA;
+font-family: 'Lato', sans-serif;
+}
+
+.title {
+color: #fff;
+text-align: center;
+font-size: 4em;
+font-weight: 300;
+}
+
+.topBar {
+width: 102%;
+height: 60px;
+background: #282828;
+margin-top: -8px;
+margin-left: 0px;
+padding: 0px;
+margin-left: -8px;
+}
+
+.container{
+
+width: 1024px;
+height: auto;
+margin: 0 auto;
 
 }
+
+.box {
+width: 250px;
+height: 250px;
+background: #ecf0f1;
+box-shadow: -2px 2px 9px #282828;
+float: left;
+margin-right: 25px;
+margin-left: 63px;
+margin-bottom: 26px;
+}
+
+.icon-user{
+text-align: center;
+font-size: 6em;
+line-height: 2;
+color: #e74c3c;
+
+
+}
+
+a .view{
+
+text-align: center;
+
+}
+
+.userName {
+text-align: center;
+position: relative;
+top: -21px;
+font-size: 1.3em;
+}
+

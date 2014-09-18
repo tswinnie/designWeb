@@ -14,12 +14,51 @@ class Page(object):
         <title>{self.title}</title>
     </head>
     <link href="{self.css}" rel="stylesheet" type="text/css" />
-
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href="https://fontastic.s3.amazonaws.com/EX5vThHnfUWWhKCXqQANtS/icons.css" rel="stylesheet">
 
     <body>
         """
         self.body = """
-        <p> test</p>
+
+        <div class="topBar"></div>
+        <p class="title"> Monitor Your Storage Usage</p>
+        <div class="container">
+
+            <div class="box">
+            <div class="icon-user""></div>
+            <div class="userName">Michele</div>
+            <a href="#" style="position: relative; left: 55px; ">View Storage Usage</a>
+            </div>
+
+            <div class="box">
+            <div class="icon-user""></div>
+            <div class="userName">Todd</div>
+            <a href="#" style="position: relative; left: 55px; ">View Storage Usage</a>
+            </div>
+
+            <div class="box">
+            <div class="icon-user""></div>
+            <div class="userName">Nancy</div>
+            <a href="#" style="position: relative; left: 55px; ">View Storage Usage</a>
+            </div>
+
+            <div class="box">
+            <div class="icon-user""></div>
+            <div class="userName">Henry</div>
+            <a href="#" style="position: relative; left: 55px; ">View Storage Usage</a>
+            </div>
+
+            <div class="box">
+            <div class="icon-user""></div>
+            <div class="userName">Jason</div>
+            <a href="#" style="position: relative; left: 55px; ">View Storage Usage</a>
+            </div>
+
+
+
+
+        </div>
 
 
 

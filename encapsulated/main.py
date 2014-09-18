@@ -83,6 +83,12 @@ class Jason(object):
             self.__remaining = 50 - (self.pictures + self.videos + self.documents + self.music + self.apps)  #do the math for the remaining storage
             return self.final_storage
 
+        #now I will set up my setter
+
+        @final_storage.setter
+        def final_storage(self, new_final_storage):
+            pass # not using my setter right now
+
 
 
 

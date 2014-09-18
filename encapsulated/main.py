@@ -9,7 +9,7 @@ Encapsulated Calculator
 import webapp2
 from pages import Page  #importing the page class
 from users import Storage  #importing the storage class
-from hello import hello  #importing the storage class
+from storage import hello  #importing the storage class
 
 
 
@@ -21,7 +21,7 @@ class MainHandler(webapp2.RequestHandler):
         p.title = "My New Page"
         p.css = "css/styles.css"
         p.update() #referencing my update class from pages
-        # self.response.write(p.user_page) #writing the user_page which has has all the html for my application
+        h.update_this()
 
         # I will create an application that calculates the remaining storage for different users
 
@@ -35,14 +35,16 @@ class MainHandler(webapp2.RequestHandler):
         m.documents = 1
         m.music = 3
         m.apps = 4
+        # t = hello()
+
         #write the values to the page
-        # self.response.write("Michel has  " + str(m.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
 
         if self.request.GET:
             total = self.request.GET['totalStorage']
-            self.response.write("Michele's  total storage used is  " + total + " GB <br/> Michel has  " + str(m.final_storage) + " GB of storage remaining")
+            self.response.write(h.user_page_update + "Michele's  total storage used is  " + total + " GB <br/> Michel has  " + str(m.final_storage) + " GB of storage remaining")
         else:
-            self.response.write(p.user_page) #writing the user_page which has has all the html for my application
+            self.response.write(p.user_page)  #writing the user_page which has has all the html for my application
+
     #now I am going create the remaining users
 
         #now I will hard code the values for each data object

@@ -9,21 +9,26 @@ Encapsulated Calculator
 import webapp2
 from pages import Page  #importing the page class
 from users import Storage  #importing the storage class
+from hello import hello  #importing the storage class
+
 
 
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-
+        h = hello()
         p = Page()
         p.title = "My New Page"
         p.css = "css/styles.css"
         p.update() #referencing my update class from pages
-        self.response.write(p.user_page) #writing the user_page which has has all the html for my application
+        # self.response.write(p.user_page) #writing the user_page which has has all the html for my application
 
         # I will create an application that calculates the remaining storage for different users
 
         #now I will hard code the values for each data object
+
+
+
         m = Storage()
         m.pictures = 5
         m.videos = 10
@@ -31,8 +36,13 @@ class MainHandler(webapp2.RequestHandler):
         m.music = 3
         m.apps = 4
         #write the values to the page
-        self.response.write("Michel has  " + str(m.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
+        # self.response.write("Michel has  " + str(m.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
 
+        if self.request.GET:
+            total = self.request.GET['totalStorage']
+            self.response.write("Michele's  total storage used is  " + total + " GB <br/> Michel has  " + str(m.final_storage) + " GB of storage remaining")
+        else:
+            self.response.write(p.user_page) #writing the user_page which has has all the html for my application
     #now I am going create the remaining users
 
         #now I will hard code the values for each data object
@@ -43,7 +53,7 @@ class MainHandler(webapp2.RequestHandler):
         t.music = 20
         t.apps = 7
         #write the values to the page
-        self.response.write(" <br/> Todd has  " + str(t.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
+        # self.response.write(" <br/> Todd has  " + str(t.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
 
 
 #now I will hard code the values for each data object
@@ -54,7 +64,7 @@ class MainHandler(webapp2.RequestHandler):
         n.music = 9
         n.apps = 7
         #write the values to the page
-        self.response.write(" <br/> Nancy has  " + str(n.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
+        # self.response.write(" <br/> Nancy has  " + str(n.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
 
 
 #now I will hard code the values for each data object
@@ -65,7 +75,7 @@ class MainHandler(webapp2.RequestHandler):
         h.music = 6
         h.apps = 7
         #write the values to the page
-        self.response.write(" <br/> Henry has  " + str(h.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
+        # self.response.write(" <br/> Henry has  " + str(h.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
 
 
 #now I will hard code the values for each data object
@@ -76,8 +86,7 @@ class MainHandler(webapp2.RequestHandler):
         j.music = 7
         j.apps = 2
         #write the values to the page
-        self.response.write(" <br/> Jason has  " + str(j.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
-
+        # self.response.write(" <br/> Jason has  " + str(j.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
 
 
 

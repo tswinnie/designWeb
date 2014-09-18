@@ -28,7 +28,7 @@ class Page(object):
             <div class="box">
             <div class="icon-user""></div>
             <div class="userName">Michele</div>
-            <a href="#" style="position: relative; left: 55px; ">View Storage Usage</a>
+            <a href="?totalStorage=23" style="position: relative; left: 55px; ">View Storage Usage</a>
             </div>
 
             <div class="box">

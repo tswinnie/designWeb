@@ -23,16 +23,18 @@ class MainHandler(webapp2.RequestHandler):
         # I will create an application that calculates the remaining storage for different users
 
         #I am going to set up my class that will hold my 5 data objects
+        
+        #each user will have a total storage limit of 50GB
 
 
 class Michele(object):
     def __init__(self):
-        self.pictures = 0
-        self.videos = 0
-        self.documents = 0
-        self.music = 0
-        self.total = 0
-        self.remaining = 0
+        self.pictures = 0  #the number of pictures in GB
+        self.videos = 0  #the number of videos in GB
+        self.documents = 0  #the number of documents in GB
+        self.music = 0  #the number of music in GB
+        self.total = 0  #the number of all files stored in GB
+        self.remaining = 0  #total storage remaining
 
 
 

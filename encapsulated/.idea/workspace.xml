@@ -26,7 +26,7 @@
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="21" selection-start="683" selection-end="683" vertical-scroll-proportion="0.26232114" vertical-offset="210" max-vertical-offset="1155">
+            <state line="14" column="42" selection-start="238" selection-end="238" vertical-scroll-proportion="-0.0015898251" vertical-offset="211" max-vertical-offset="840">
               <folding>
                 <element signature="e#72#86#0" expanded="true" />
               </folding>
@@ -37,7 +37,7 @@
       <file leaf-file-name="users.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/users.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+            <state line="9" column="16" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
               <folding />
             </state>
           </provider>
@@ -72,8 +72,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/users.py" />
         <option value="$PROJECT_DIR$/pages.py" />
+        <option value="$PROJECT_DIR$/users.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -322,13 +322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="0" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1050">
@@ -336,9 +329,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/users.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="16" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="21" selection-start="683" selection-end="683" vertical-scroll-proportion="0.26232114" vertical-offset="210" max-vertical-offset="1155">
+        <state line="14" column="42" selection-start="238" selection-end="238" vertical-scroll-proportion="-0.0015898251" vertical-offset="211" max-vertical-offset="840">
           <folding>
             <element signature="e#72#86#0" expanded="true" />
           </folding>

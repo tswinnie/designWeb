@@ -34,25 +34,25 @@ class Page(object):
             <div class="box">
             <div class="icon-user""></div>
             <div class="userName">Todd</div>
-            <a href="#" style="position: relative; left: 55px; ">View Storage Usage</a>
+            <a href="?totalStorage=48" style="position: relative; left: 55px; ">View Storage Usage</a>
             </div>
 
             <div class="box">
             <div class="icon-user""></div>
             <div class="userName">Nancy</div>
-            <a href="#" style="position: relative; left: 55px; ">View Storage Usage</a>
+            <a href="?totalStorage=22" style="position: relative; left: 55px; ">View Storage Usage</a>
             </div>
 
             <div class="box">
             <div class="icon-user""></div>
             <div class="userName">Henry</div>
-            <a href="#" style="position: relative; left: 55px; ">View Storage Usage</a>
+            <a href="?totalStorage=32" style="position: relative; left: 55px; ">View Storage Usage</a>
             </div>
 
             <div class="box">
             <div class="icon-user""></div>
             <div class="userName">Jason</div>
-            <a href="#" style="position: relative; left: 55px; ">View Storage Usage</a>
+            <a href="?totalStorage=20" style="position: relative; left: 55px; ">View Storage Usage</a>
             </div>
 
 

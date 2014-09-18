@@ -60,4 +60,10 @@ position: relative;
 top: -21px;
 font-size: 1.3em;
 }
+.moveBox {
+width: 383px;
+height: 50px;
+/* padding-right: 28px; */
+float: left;
+}
 

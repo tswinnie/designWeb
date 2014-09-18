@@ -28,7 +28,7 @@ class hello(object):
 
 <div class="moveBox"></div>
 
-  <div class="box" style="margin-right: -295px; width: 322px; margin-top: -13px; margin-left: -27px;">
+  <div class="box" style="margin-right: -295px; width: 322px; margin-top: -13px; margin-left: -27px; position: relative; z-index: -1; left: 18px;">
             <div class="icon-user"" style="position: relative; top: 25px; "></div>
             </div>
 

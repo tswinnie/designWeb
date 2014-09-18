@@ -41,7 +41,7 @@ class MainHandler(webapp2.RequestHandler):
 
         if self.request.GET:
             total = self.request.GET['totalStorage']
-            self.response.write(h.user_page_update + "Michele's  total storage used is  " + total + " GB <br/> Michel has  " + str(m.final_storage) + " GB of storage remaining")
+            self.response.write(h.user_page_update + "Total storage used is  " + total + " GB <br/> The remaining is  " + str(m.final_storage) + " GB of storage remaining")
         else:
             self.response.write(p.user_page)  #writing the user_page which has has all the html for my application
 
@@ -56,6 +56,9 @@ class MainHandler(webapp2.RequestHandler):
         t.apps = 7
         #write the values to the page
         # self.response.write(" <br/> Todd has  " + str(t.final_storage) + " GB of storage remaining") #writing the user_page which has has all the html for my application
+
+
+
 
 
 #now I will hard code the values for each data object

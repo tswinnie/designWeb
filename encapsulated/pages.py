@@ -15,9 +15,15 @@ class Page(object):
     </head>
     <link href="{self.css}" rel="stylesheet" type="text/css" />
 
+
     <body>
         """
-        self.body = "Welcome Tyrone TO My SIte"
+        self.body = """
+        <p> test</p>
+
+
+
+        """
         self.close = """
 
     </body>

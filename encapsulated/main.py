@@ -33,8 +33,8 @@ class Michele(object):
         self.videos = 0  #the number of videos in GB
         self.documents = 0  #the number of documents in GB
         self.music = 0  #the number of music in GB
-        self.total = 0  #the number of all files stored in GB
-        self.remaining = 0  #total storage remaining
+        self.apps = 0  #the number of all files stored in GB
+        self.__remaining = 0  #total storage remaining
 
 
 class Jack(object):
@@ -43,8 +43,8 @@ class Jack(object):
         self.videos = 0  #the number of videos in GB
         self.documents = 0  #the number of documents in GB
         self.music = 0  #the number of music in GB
-        self.total = 0  #the number of all files stored in GB
-        self.remaining = 0  #total storage remaining
+        self.apps = 0  #the number of all files stored in GB
+        self.__remaining = 0  #total storage remaining
 
 
 class Henry(object):
@@ -54,7 +54,7 @@ class Henry(object):
         self.documents = 0  #the number of documents in GB
         self.music = 0  #the number of music in GB
         self.total = 0  #the number of all files stored in GB
-        self.remaining = 0  #total storage remaining
+        self.__remaining = 0  #total storage remaining
 
 
 class Tiffany(object):
@@ -63,8 +63,8 @@ class Tiffany(object):
         self.videos = 0  #the number of videos in GB
         self.documents = 0  #the number of documents in GB
         self.music = 0  #the number of music in GB
-        self.total = 0  #the number of all files stored in GB
-        self.remaining = 0  #total storage remaining
+        self.apps = 0  #the number of all files stored in GB
+        self.__remaining = 0  #total storage remaining
 
 
 class Jason(object):
@@ -73,8 +73,17 @@ class Jason(object):
         self.videos = 0  #the number of videos in GB
         self.documents = 0  #the number of documents in GB
         self.music = 0  #the number of music in GB
-        self.total = 0  #the number of all files stored in GB
-        self.remaining = 0  #total storage remaining
+        self.apps = 0  #the number of all files stored in GB
+        self.__remaining = 0  #total storage remaining
+
+        #now I am going to use a getter to do the calculations for me
+
+        @property
+        def final_storage(self):
+            self.__remaining = 50 - (self.pictures + self.videos + self.documents + self.music + self.apps)  #do the math for the remaining storage
+            return self.final_storage
+
+
 
 
 

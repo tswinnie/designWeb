@@ -39,6 +39,7 @@ class Page(object):
     # using getter and setters
 
 
+
     @property
     def title(self):
         return self.__title  #this is returning the value of title
@@ -54,6 +55,9 @@ class Page(object):
     @css.setter
     def css(self, new_css):
         self.__css = new_css  #this is setting the old value of css to the new value of css
+
+
+
 
 
 

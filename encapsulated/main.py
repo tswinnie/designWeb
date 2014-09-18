@@ -12,8 +12,6 @@ from users import Storage  #importing the storage class
 from storage import hello  #importing the storage class
 
 
-
-
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         h = hello()
@@ -35,13 +33,13 @@ class MainHandler(webapp2.RequestHandler):
         m.documents = 1
         m.music = 3
         m.apps = 4
-        # t = hello()
 
         #write the values to the page
 
         if self.request.GET:
             total = self.request.GET['totalStorage']
-            self.response.write(h.user_page_update + "Total storage used is  " + total + " GB <br/> The remaining is  " + str(m.final_storage) + " GB of storage remaining")
+            self.response.write(h.user_page_update + "Total storage used is  " + total + " GB <br/> There is  " + str(m.final_storage) + " GB of storage remaining")
+
         else:
             self.response.write(p.user_page)  #writing the user_page which has has all the html for my application
 

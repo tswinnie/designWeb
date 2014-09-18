@@ -7,7 +7,7 @@ class Storage(object):
         self.videos = 0  #the number of videos in GB
         self.documents = 0  #the number of documents in GB
         self.music = 0  #the number of music in GB
-        self.apps = 0  #the number of all files stored in GB
+        self.__apps = 0  #the number of all files stored in GB
         self.__remaining = 0  #total storage remaining
 
 

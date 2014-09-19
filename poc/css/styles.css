@@ -1,0 +1,88 @@
+body{
+font-family: 'Lato', sans-serif;
+color: #fff;
+}
+
+html {
+  background: url(../images/background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.container{
+
+width: 300px !important;
+height: 265px !important;
+margin-left: 25%!important;
+margin-right: auto !important;
+border-radius: 2px !important;
+}
+
+.topLabel {
+text-align: center !important;
+display: block !important;
+text-transform: uppercase !important;
+font-weight: bold !important;
+color: #fff !important;
+padding-top: 20% !important;
+padding-bottom: 2% !important;
+}
+
+.userName {
+border: none !important;
+background: #eaedf2 !important;
+width: 215px !important;
+height: 33px !important;
+border-radius: 2px !important;
+margin-left: 40px !important;
+}
+
+.bottomLabel {
+text-align: center !important;
+display: block !important;
+text-transform: uppercase !important;
+font-weight: bold !important;
+color: #fff !important;
+padding-top: 2% !important;
+padding-bottom: 2% !important;
+}
+
+
+.submitBTN {
+border: none;
+width: 150px;
+height: 35px;
+margin-left: 24%;
+margin-top: 19px;
+background: #4b93ff;
+border-radius: 2px !important;
+color: #fff;
+box-shadow: none !important;
+position: relative;
+top: -16px;
+}
+
+#titleText{
+
+text-align: center;
+font-size: 4em;
+display: inline-block;
+width: 100%;
+font-weight: 300;
+margin-bottom: -20px;
+
+}
+
+.boxRight {
+width: 400px;
+height: auto;
+float: right;
+clear: both;
+/* background: green; */
+padding: 70px;
+font-size: 1.5em;
+font-weight: 100;
+line-height: 1.4;
+}

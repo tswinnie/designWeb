@@ -23,7 +23,7 @@ class MainHandler(webapp2.RequestHandler):
 
         xmldoc = minidom.parse(result) #I am going to parse the xml data
 
-        new_data = xmldoc.getElementsByTagName("long_name")[0].firstChild.nodeValue  #testing to see if I can get some data back
+        new_data = xmldoc.getElementsByTagName("long_name")[0].firstChild.nodeValue  #getting a specific set back from xml
 
         new_data_two = xmldoc.getElementsByTagName("short_name")[0].firstChild.nodeValue  #testing to see if I can get some data back
 

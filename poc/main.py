@@ -25,7 +25,7 @@ class MainHandler(webapp2.RequestHandler):
 
         new_data = xmldoc.getElementsByTagName("long_name")[0].firstChild.nodeValue  #getting a specific set back from xml
 
-        new_data_two = xmldoc.getElementsByTagName("short_name")[0].firstChild.nodeValue  #testing to see if I can get some data back
+        new_data_two = xmldoc.getElementsByTagName("short_name")[0].firstChild.nodeValue  #getting a specific set back from xml
 
         latt = xmldoc.getElementsByTagName("lat")[0].firstChild.nodeValue  #testing to see if I can get some data back getting back lattitude
 

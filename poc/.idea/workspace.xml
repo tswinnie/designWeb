@@ -35,7 +35,7 @@
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="0.14308426" vertical-offset="0" max-vertical-offset="3120">
+            <state line="19" column="0" selection-start="396" selection-end="396" vertical-scroll-proportion="0.45310014" vertical-offset="0" max-vertical-offset="2835">
               <folding />
             </state>
           </provider>
@@ -94,6 +94,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="form" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="poc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -311,7 +321,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="0.14308426" vertical-offset="0" max-vertical-offset="3120">
+        <state line="19" column="0" selection-start="396" selection-end="396" vertical-scroll-proportion="0.45310014" vertical-offset="0" max-vertical-offset="2835">
           <folding />
         </state>
       </provider>

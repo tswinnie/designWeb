@@ -11,6 +11,10 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
+        url = "http://maps.google.com/maps/api/geocode/xml?address=sydney&sensor=false"
+
+
+
         # Create the page so that I can create a form
         # create the form inside the html code like I normally would in an HTML document
 
@@ -144,30 +148,7 @@ color: #fff !important;
 
 <div class="container">
 <form method ="GET" action="">
-<label class="topLabel" style="position: relative; top: -120px; left: -167px; ">First Name:</label><input type="text" name="first" class= "userName" style="position: relative; top: -123px;"/><br>
-<label class="bottomLabel" style="position: relative; top: -120px; left: -167px; ">Last Name:</label><input type="text" name="last"  class= "userName" style="position: relative; top: -123px;"/><br>
-<label class="bottomLabel" style="position:relative; top: -283px; left: 165px;">Email:</label><input type="text" name="email" class= "userName" style="float:right; position: relative; top: -283px; margin-right: 50px;"/><br>
 
-
-
-<label class="bottomLabel" style="position:relative; top: -261px; left: 325px;">How Did You Hear About Us?:</label><select name="aboutus" class= "userName"  style="float:right; position: relative; top: -263px; margin-right: 50px;">
-  <option  value="Online" >Online</option>
-    <option  value="Friend" >Friend</option>
-        <option  value="Other" >Other</option>
-</select>
-<br>
-<label class="bottomLabel" style="position:relative; top: -245px; left: 310px;">How Excited Are About This Site?:</label><select name="excited" class= "userName" style="position:relative; top: -248px; left: 345px;">
-  <option  value="not really" > Not Really</option>
-    <option  value="a little" >A Little</option>
-        <option  value="very excited" >Very Excited</option>
-</select>
-<label class="bottomLabel" style="position:relative; top: -325px; left: -171px;">Send Me Email Updates:</label><input type="checkbox" name= "updates" value="send updates" style="position:relative; top: -316px; left: 44px;" /><br>
-
-<br>
-<input id="submit" type="submit" value="submit" class="submitBTN" />
-
-
-<h3 class="titlePage" style="margin-top: -253px;">This is the info we got from you</h3>
 
 
         '''

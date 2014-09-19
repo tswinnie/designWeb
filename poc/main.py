@@ -7,11 +7,14 @@ Simple Form Assignment
 
 
 import webapp2
+import urllib2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-        url = "http://maps.google.com/maps/api/geocode/xml?address=sydney&sensor=false"
+        url = "http://maps.google.com/maps/api/geocode/xml?address=sydney&sensor=false" # set up the url to get data
+
+        request = urllib2.Request(url)
 
 
 

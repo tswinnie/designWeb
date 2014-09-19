@@ -14,7 +14,11 @@ class MainHandler(webapp2.RequestHandler):
 
         url = "http://maps.google.com/maps/api/geocode/xml?address=sydney&sensor=false" # set up the url to get data
 
-        request = urllib2.Request(url)
+        request = urllib2.Request(url)  #set up a variable that wil get the data from the url
+
+        opener = urllib2.build_opener()  #create a var that will represent the object that is returned
+
+        result = opener.open(request)  #using result to get the result from the url and request the data from the API
 
 
 

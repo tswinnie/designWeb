@@ -23,10 +23,11 @@ class MainHandler(webapp2.RequestHandler):
 
         xmldoc = minidom.parse(result) #I am going to parse the xml data
 
-        first = xmldoc.getElementsByTagName("long_name")[0].firstChild.nodeValue  #testing to see if I can get some data back
+        new_data = xmldoc.getElementsByTagName("long_name")[0].firstChild.nodeValue  #testing to see if I can get some data back
 
-        last = xmldoc.getElementsByTagName("short_name")[0].firstChild.nodeValue  #testing to see if I can get some data back
+        new_data_two = xmldoc.getElementsByTagName("short_name")[0].firstChild.nodeValue  #testing to see if I can get some data back
 
+        self.response.write("The data that is returned from Google Maps API:  " + " <br/> " + new_data + " <br/> " + new_data_two)
 
 
 
@@ -46,11 +47,7 @@ font-family: 'Lato', sans-serif;
 }
 
 html {
-  background: url(images/background.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+
 }
 
 .container{
@@ -154,23 +151,12 @@ color: #fff !important;
 '''
         page_body = '''
 <body>
-        <h2 class="titlePage">We are Coming Soon!</h2>
 
-<div class="boxRight">
-
-<p class="topText">We are bringing the latest technology to you and developers alike. We will change the world and how it thinks aboutweb development.</p>
-<p class="topText">If you would like to know more about this new technology, please fill out the form and we will be in touch.</p>
-</div>
-
-<div class="container">
-<form method ="GET" action="">
 
 
 
         '''
         page_close = '''
-</form>
-</div>
 </body>
 </html>
         '''

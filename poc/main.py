@@ -7,7 +7,7 @@ POC Assignment
 
 
 import webapp2
-import urllib2
+import urllib2  #imported libray to help get data
 from xml.dom import minidom   #library used to pars xml
 
 class MainHandler(webapp2.RequestHandler):

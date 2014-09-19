@@ -8,6 +8,7 @@ Simple Form Assignment
 
 import webapp2
 import urllib2
+from xml.dom import minidom   #library used to pars xml
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):

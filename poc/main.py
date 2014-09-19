@@ -27,7 +27,13 @@ class MainHandler(webapp2.RequestHandler):
 
         new_data_two = xmldoc.getElementsByTagName("short_name")[0].firstChild.nodeValue  #testing to see if I can get some data back
 
-        self.response.write("The data that is returned from Google Maps API:  " + " <br/> " + new_data + " <br/> " + new_data_two)
+        latt = xmldoc.getElementsByTagName("lat")[0].firstChild.nodeValue  #testing to see if I can get some data back getting back lattitude
+
+
+        long = xmldoc.getElementsByTagName("lng")[0].firstChild.nodeValue  #testing to see if I can get some data back getting back longitude
+
+
+        self.response.write("The data that is returned from Google Maps API:  " + " <br/> " + new_data + " <br/> " + new_data_two + " <br/> " + latt + " <br/> " + long)
 
 
 

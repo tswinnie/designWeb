@@ -23,6 +23,8 @@ class MainHandler(webapp2.RequestHandler):
 
         xmldoc = minidom.parse(result) #I am going to parse the xml data
 
+        print xmldoc.getElementsByTagName("address_component")  #testing to see if I can get some data back
+
 
 
         # Create the page so that I can create a form

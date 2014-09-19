@@ -21,6 +21,8 @@ class MainHandler(webapp2.RequestHandler):
 
         result = opener.open(request)  #using result to get the result from the url and request the data from the API
 
+        xmldoc = minidom.parse(result) #I am going to parse the xml data
+
 
 
         # Create the page so that I can create a form

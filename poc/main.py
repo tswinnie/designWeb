@@ -2,7 +2,7 @@
 Tyrone Swinnie
 Design for Web Programming
 9/18/14
-Simple Form Assignment
+POC Assignment
 '''
 
 
@@ -13,7 +13,7 @@ from xml.dom import minidom   #library used to pars xml
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-        url = "http://maps.google.com/maps/api/geocode/xml?address=florida&sensor=false" # set up the url to get data
+        url = "http://maps.google.com/maps/api/geocode/xml?address=florida&sensor=false" # set up the url to get data, also passing in Florida so that google map returns data on florida
 
         request = urllib2.Request(url)  #set up a variable that wil get the data from the url
 

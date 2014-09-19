@@ -32,7 +32,6 @@ class MainHandler(webapp2.RequestHandler):
 
         long = xmldoc.getElementsByTagName("lng")[0].firstChild.nodeValue  #testing to see if I can get some data back getting back longitude
 
-
         self.response.write("The data that is returned from Google Maps API:  " + " <br/> " + new_data + " <br/> " + new_data_two + " <br/> " + latt + " <br/> " + long)
 
 

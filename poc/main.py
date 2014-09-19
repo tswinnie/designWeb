@@ -166,23 +166,6 @@ color: #fff !important;
 </html>
         '''
 
-   # I am going to store the information that are collected from the user into a variable
-        if self.request.GET:
-            first_name = self.request.GET['first']  # this gets the value for the first name
-            last_name = self.request.GET['last']  # this gets the last name value
-            email = self.request.GET['email']  # this gets the email value from the user
-            about_us = self.request.GET['aboutus']  # this gets the info for about us field
-            excited = self.request.GET['excited']  # this gets the value to see if the user is excited
-            updates = self.request.GET['updates']  # this gets value to see if the user wants you to send updates
-            # return the values that the user put in the form after the submit button
-
-            self.response.write(page_head + page_body + first_name + ' '  ' '+ last_name + ' ' ' ' + email + ' ' ' ' + about_us + ' '' ' + excited + ' ' ' ' + updates + ' ' ' ' + page_close)
-
-        else:
-            # if the user does not input any values then do this
-            self.response.write(page_head + page_body + page_close)
-
-
 
 
 app = webapp2.WSGIApplication([

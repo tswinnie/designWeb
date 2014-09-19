@@ -13,7 +13,7 @@ from xml.dom import minidom   #library used to pars xml
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-        url = "http://maps.google.com/maps/api/geocode/xml?address=sydney&sensor=false" # set up the url to get data
+        url = "http://maps.google.com/maps/api/geocode/xml?address=florida&sensor=false" # set up the url to get data
 
         request = urllib2.Request(url)  #set up a variable that wil get the data from the url
 
@@ -23,7 +23,7 @@ class MainHandler(webapp2.RequestHandler):
 
         xmldoc = minidom.parse(result) #I am going to parse the xml data
 
-        print xmldoc.getElementsByTagName("address_component")[0].firstChild.nodeValue  #testing to see if I can get some data back
+        print xmldoc.getElementsByTagName("long_name")[0].firstChild.nodeValue  #testing to see if I can get some data back
 
 
 

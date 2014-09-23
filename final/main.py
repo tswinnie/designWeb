@@ -55,19 +55,32 @@ class UserInput(Page):
         self._form_open = '<form method="GET"'
         self._form_close = '</form>'
         self.__inputs = []
+        self._form_inputs = ''
         #<input type="text" value = "" name="recipe" placeholder="Search Recipes" />
         #<input type="submit" value="Submit" />
 
-        @property
-        def inputs(self):
+    @property
+    def inputs(self):
             pass
 
-        @inputs.setter
-        def inputs(self, arr):
-            #change my input variables from private
-            self.__inputs = arr
-            #now I am going to sort through my array of inputs
-            print arr
+    @inputs.setter
+    def inputs(self, arr):
+        #change my input variables from private
+        self.__inputs = arr
+        #now I am going to sort through my array of inputs
+        for item in arr:
+            self._form_inputs += '<input type="' + item[1] + '" name="' + item[0]
+
+            if len(item) > 2:
+                self._form_inputs += '" placeholder="' + item[2] + '" />'
+
+            else:
+                self._form_inputs += '" />'
+
+            print self._form_inputs
+
+#now I am going to create a function that will print out my form
+
 
 
 

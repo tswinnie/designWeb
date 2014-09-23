@@ -13,7 +13,7 @@ class MainHandler(webapp2.RequestHandler):
         # self.response.write('Hello world!')
         p = UserInput()
         p.inputs = [['recipe', 'text', 'Search Recipe'], ['Submit', 'submit']]
-        self.response.write(p.print_out())
+        self.response.write(p.show_form())
 
 # I am going to create my page class
 
@@ -33,7 +33,7 @@ class Page(object):
     </head>
     <body> '''
 
-        self._body = 'Test'
+        self._body = ''
         self._close = '''
 
     </body>
@@ -52,7 +52,7 @@ class UserInput(Page):
     def __init__(self):
         #run the constructor function for my Page class
         super(UserInput, self).__init__()
-        self._form_open = '<form method="GET"'
+        self._form_open = '<form method="GET">'
         self._form_close = '</form>'
         self.__inputs = []
         self._form_inputs = ''
@@ -80,6 +80,9 @@ class UserInput(Page):
             print self._form_inputs
 
 #now I am going to create a function that will print out my form
+    def show_form(self):
+        return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
+
 
 
 

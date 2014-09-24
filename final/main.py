@@ -23,13 +23,12 @@ class MainHandler(webapp2.RequestHandler):
             #get info from api
             recipe = self.request.GET['recipe']
 
-            # if " " in recipe:
-            #     self.response.write("Please enter search without spaces")
-            #
+
 
 
 
             url = "http://www.recipepuppy.com/api/?i=onions,garlic&q=" + recipe
+
 
             request = urllib2.Request(url)  #set up a variable that wil get the data from the url
 
@@ -40,13 +39,6 @@ class MainHandler(webapp2.RequestHandler):
             jsondoc = json.load(result)  #i am parsing my json doc here
 
             #now I am going to get back specific pieces of data
-
-            # time = "The time it takes to prepare: " + str(jsondoc['matches'][0]['totalTimeInSeconds']) + " Seconds"
-
-
-
-            # sponsor = "Sponsored by: " + jsondoc['matches'][0]['sourceDisplayName']
-            # rating = "The rating for this dish is: " + str(jsondoc['matches'][0]['rating'])
 
 
             source = jsondoc['title']
@@ -72,13 +64,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
-            self.response.write(source)
-            self.response.write(source_link)
-            self.response.write(version)
-            self.response.write(img)
-            self.response.write(name_list)
-            self.response.write(ingredients)
-            self.response.write(link)
+
 
 
 
@@ -100,8 +86,10 @@ class MainHandler(webapp2.RequestHandler):
 class Page(object):
     def __init__(self):
 
+        self.css = 'css/styles.css'
         self._head = '''
-
+  <link href="{self.css}" rel="stylesheet" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
 <!DOCTYPE HTML>
 
 <html>
@@ -121,9 +109,17 @@ class Page(object):
 </html>
 
         '''
+
+        self.home = ''
 #created function to print out my page
     def print_out(self):
-        return self._head + self._body + self._close
+
+        self.home = self._head + self._body + self._close
+        self.home = self.home.format(**locals())
+        # return self.home
+
+
+        # return self._head + self._body + self._close
 
 
 #I am going to create my form class that will hold the user input value
@@ -161,8 +157,9 @@ class UserInput(Page):
 
 #now I am going to create a function that will print out my form
     def show_form(self):
-        return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
-
+        new_form = self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
+        new_form = new_form.format(**locals())
+        return new_form
 
 
 

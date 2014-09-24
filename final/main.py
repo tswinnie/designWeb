@@ -22,7 +22,15 @@ class MainHandler(webapp2.RequestHandler):
         if self.request.GET:
             #get info from api
             recipe = self.request.GET['recipe']
-            url = "http://api.yummly.com/v1/api/recipes?_app_id=c126a9da&_app_key=1b6b80279a3d555c0f3522f232038557&q=" +recipe + "&requirePictures=true"
+
+            # if " " in recipe:
+            #     self.response.write("Please enter search without spaces")
+            #
+
+
+
+            url = "http://www.recipepuppy.com/api/?i=onions,garlic&q=" + recipe
+
             request = urllib2.Request(url)  #set up a variable that wil get the data from the url
 
             opener = urllib2.build_opener()  #create a var that will represent the object that is returned
@@ -33,20 +41,45 @@ class MainHandler(webapp2.RequestHandler):
 
             #now I am going to get back specific pieces of data
 
-            name_list = "The name of this recipe is: " + jsondoc['matches'][0]['recipeName']
-            time = "The time it takes to prepare: " + str(jsondoc['matches'][0]['totalTimeInSeconds']/60) + " Minutes"
+            # time = "The time it takes to prepare: " + str(jsondoc['matches'][0]['totalTimeInSeconds']) + " Seconds"
 
 
-            sponsor = "Sponsored by: " + jsondoc['matches'][0]['sourceDisplayName']
-            ingredients = jsondoc['matches'][0]['ingredients']
+
+            # sponsor = "Sponsored by: " + jsondoc['matches'][0]['sourceDisplayName']
+            # rating = "The rating for this dish is: " + str(jsondoc['matches'][0]['rating'])
+
+
+            source = jsondoc['title']
+
+            source_link = jsondoc['href']
+
+            version = jsondoc['version']
+
+
+            img = jsondoc['results'][0]['thumbnail']
+
+            name_list = "The name of this recipe is: " + jsondoc['results'][0]['title']
+
+            ingredients = jsondoc['results'][0]['ingredients']
+
+            link = jsondoc['results'][0]['href']
 
             self.ingr_list = '' #create var that will hold the value for my items in the array of ingredients
 
             for item in ingredients: #loop through the items in the array of ingredients
                 self.ingr_list += item  #add each item to the page
-                self.ingr_list += '<br/>' #add a line break between each item
 
-            self.response.write(time)
+
+
+
+            self.response.write(source)
+            self.response.write(source_link)
+            self.response.write(version)
+            self.response.write(img)
+            self.response.write(name_list)
+            self.response.write(ingredients)
+            self.response.write(link)
+
 
 
 

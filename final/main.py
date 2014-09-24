@@ -8,11 +8,12 @@ Final Project: Application with API
 
 import webapp2
 import urllib2  #imported libray to help get data
-import json #added library to pars json data
+import json  #added library to pars json data
 
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+
         # self.response.write('Hello world!')
         p = UserInput()
         p.inputs = [['recipe', 'text', 'Search Recipe'], ['Submit', 'submit']]
@@ -30,7 +31,30 @@ class MainHandler(webapp2.RequestHandler):
 
             jsondoc = json.load(result)  #i am parsing my json doc here
 
-            self.response.write(jsondoc)
+            #now I am going to get back specific pieces of data
+
+            name_list = "The name of this recipe is: " +  jsondoc['matches'][0]['recipeName']
+
+            sponsor = "Sponsored by: " + jsondoc['matches'][0]['sourceDisplayName']
+            ingredients = jsondoc['matches'][0]['ingredients']
+
+            self.ingr_list = '' #create var that will hold the value for my items in the array of ingredients
+
+            for item in ingredients: #loop through the items in the array of ingredients
+                self.ingr_list += item  #add each item to the page
+                self.ingr_list += '<br/>' #add a line break between each item
+
+            self.response.write(self.ingr_list)
+
+
+
+
+
+
+
+
+
+
 
 
 

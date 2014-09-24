@@ -30,7 +30,8 @@ class MainHandler(webapp2.RequestHandler):
 
             jsondoc = json.load(result)  #i am parsing my json doc here
 
-            print jsondoc
+            self.response.write(jsondoc)
+
 
 
 

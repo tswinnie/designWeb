@@ -33,7 +33,9 @@ class MainHandler(webapp2.RequestHandler):
 
             #now I am going to get back specific pieces of data
 
-            name_list = "The name of this recipe is: " +  jsondoc['matches'][0]['recipeName']
+            name_list = "The name of this recipe is: " + jsondoc['matches'][0]['recipeName']
+            time = "The time it takes to prepare: " + str(jsondoc['matches'][0]['totalTimeInSeconds']/60) + " Minutes"
+
 
             sponsor = "Sponsored by: " + jsondoc['matches'][0]['sourceDisplayName']
             ingredients = jsondoc['matches'][0]['ingredients']
@@ -44,7 +46,7 @@ class MainHandler(webapp2.RequestHandler):
                 self.ingr_list += item  #add each item to the page
                 self.ingr_list += '<br/>' #add a line break between each item
 
-            self.response.write(self.ingr_list)
+            self.response.write(time)
 
 
 

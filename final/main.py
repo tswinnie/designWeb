@@ -7,6 +7,8 @@ Final Project: Application with API
 
 
 import webapp2
+import urllib2  #imported libray to help get data
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -14,6 +16,21 @@ class MainHandler(webapp2.RequestHandler):
         p = UserInput()
         p.inputs = [['recipe', 'text', 'Search Recipe'], ['Submit', 'submit']]
         self.response.write(p.show_form())
+
+        if self.request.GET:
+            #get info from api
+            recipe = self.request.GET['recipe']
+            url = "http://api.yummly.com/v1/api/recipes?_app_id=c126a9da&_app_key=1b6b80279a3d555c0f3522f232038557&q=" +recipe + "&requirePictures=true"
+            request = urllib2.Request(url)  #set up a variable that wil get the data from the url
+
+            opener = urllib2.build_opener()  #create a var that will represent the object that is returned
+
+            result = opener.open(request)  #using result to get the result from the url and request the data from the API
+
+            print result
+
+
+
 
 # I am going to create my page class
 
@@ -82,6 +99,13 @@ class UserInput(Page):
 #now I am going to create a function that will print out my form
     def show_form(self):
         return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
+
+
+
+
+
+
+
 
 
 

@@ -13,7 +13,7 @@ from xml.dom import minidom   #library used to pars xml
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-        url = "http://www.recipepuppy.com/api/?i=onions,garlic&q=pizza&format=xml"   # set up the url to get data, also passing in Florida so that google map returns data on florida
+        url = "http://api.yummly.com/v1/api/recipes?_app_id=YOUR_ID&_app_key=YOUR_APP_KEY&q=onion+soup&requirePictures=true"   # set up the url to get data, also passing in Florida so that google map returns data on florida
 
         request = urllib2.Request(url)  #set up a variable that wil get the data from the url
 

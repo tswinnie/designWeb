@@ -8,6 +8,7 @@ Final Project: Application with API
 
 import webapp2
 import urllib2  #imported libray to help get data
+import json #added library to pars json data
 
 
 class MainHandler(webapp2.RequestHandler):
@@ -27,7 +28,9 @@ class MainHandler(webapp2.RequestHandler):
 
             result = opener.open(request)  #using result to get the result from the url and request the data from the API
 
-            print result
+            jsondoc = json.load(result)  #i am parsing my json doc here
+
+            print jsondoc
 
 
 

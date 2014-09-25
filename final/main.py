@@ -17,7 +17,7 @@ class MainHandler(webapp2.RequestHandler):
         # self.response.write('Hello world!')
         p = UserInput()
         p.inputs = [['recipe', 'text', 'Search Recipe'], ['Submit', 'submit']]
-        self.response.write(p.show_form())
+        self.response.write("<div style='margin: 0 auto; width: 195px; display:block; margin-top: 25%;'>" + p.show_form() + "</div>")
 
         if self.request.GET:
             #get info from api
@@ -61,6 +61,18 @@ class MainHandler(webapp2.RequestHandler):
             for item in ingredients: #loop through the items in the array of ingredients
                 self.ingr_list += item  #add each item to the page
 
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + name_list + "</div>")
+
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + self.ingr_list + "</div>")
+
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + link + "</div>")
+
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + source + "</div>")
+
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + source_link + "</div>")
+
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + str(version) + "</div>")
+
 
 
 
@@ -85,7 +97,6 @@ class MainHandler(webapp2.RequestHandler):
 
 class Page(object):
     def __init__(self):
-
         self.css = 'css/styles.css'
         self._head = '''
   <link href="{self.css}" rel="stylesheet" type="text/css" />
@@ -101,7 +112,17 @@ class Page(object):
     </head>
     <body> '''
 
-        self._body = ''
+        self._body = '''
+<div class="form-search">
+<h1>Let us help you choose the perfect meal today.</h1>
+
+
+</div>
+<div class="bottomPage"></div>
+
+
+        '''
+
         self._close = '''
 
     </body>
@@ -153,11 +174,12 @@ class UserInput(Page):
             else:
                 self._form_inputs += '" />'
 
-            print self._form_inputs
+
 
 #now I am going to create a function that will print out my form
     def show_form(self):
         new_form = self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
+
         new_form = new_form.format(**locals())
         return new_form
 

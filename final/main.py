@@ -95,7 +95,6 @@ class RecipeModel(object):
         array_object.link_source = self.__jsondoc['href']
         array_object.version_number = self.__jsondoc['version']
         # now I am going to add these objects to my array
-        # self._array_do.append(array_object)
         self._array_do.append(array_object.title)
         self._array_do.append(array_object.ingredients)
         self._array_do.append(array_object.link)

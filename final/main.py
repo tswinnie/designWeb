@@ -15,7 +15,7 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
 
         p = UserInput()
-        p.inputs = [['recipe', 'text', 'Enter Your Favorite Dish'], ['Submit', 'submit']]
+        p.inputs = [['recipe', 'text', 'Enter The Name Of Your Favorite Dish'], ['Submit', 'submit']]
         self.response.write("<div style='margin: 0 auto; width: 195px; display:block; margin-top: 25%;'>" + p.print_out() + "</div>")
 
         if self.request.GET:

@@ -61,6 +61,27 @@ class MainHandler(webapp2.RequestHandler):
             for item in ingredients: #loop through the items in the array of ingredients
                 self.ingr_list += item  #add each item to the page
 
+
+        #now I am going to assgin the data returned from the json object to my recipe data object
+                self._array_do = []
+                #call my recipe data object method
+                array_object = RecipeData()
+                #now assign the corresponding values returned from json object to objects in recipe object
+                array_object.title = jsondoc['results'][0]['title']
+                array_object.ingredients = jsondoc['results'][0]['ingredients']
+                array_object.link = jsondoc['results'][0]['href']
+                array_object.source = jsondoc['href']
+                array_object.link_source = jsondoc['href']
+                array_object.version_number = jsondoc['version']
+                #now I am going to add these objects to my array
+                self._array_do.append(array_object)
+                print self._array_do
+
+
+
+
+
+
             self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 45px; z-index: 999;'>" +  name_list + "</div>")
 
             self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 31px; z-index: 999; margin-left: 315px;'>" + "<b>Ingredients:</b> " + self.ingr_list + "</div>")
@@ -73,6 +94,18 @@ class MainHandler(webapp2.RequestHandler):
 
             self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom:36px; z-index: 999; margin-left: 963px;'>" + "<b>The version number is:</b> " + str(version) + "</div>")
 
+
+
+# now I am going to create a recipe data object
+class RecipeData(object):
+    ''' This data object holds the data that is returned from the API '''
+    def __init__(self):
+        self.title = ' '
+        self.ingredients = ' '
+        self.link = ' '
+        self.source = ' '
+        self.link_source = ' '
+        self.version_number = ' '
 
 
 

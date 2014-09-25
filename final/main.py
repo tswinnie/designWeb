@@ -50,7 +50,7 @@ class MainHandler(webapp2.RequestHandler):
 
             img = jsondoc['results'][0]['thumbnail']
 
-            name_list = "The name of this recipe is: " + jsondoc['results'][0]['title']
+            name_list = "<b>The name of this recipe is:</b> " + jsondoc['results'][0]['title']
 
             ingredients = jsondoc['results'][0]['ingredients']
 
@@ -61,17 +61,17 @@ class MainHandler(webapp2.RequestHandler):
             for item in ingredients: #loop through the items in the array of ingredients
                 self.ingr_list += item  #add each item to the page
 
-            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + name_list + "</div>")
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 45px; z-index: 999;'>" +  name_list + "</div>")
 
-            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + self.ingr_list + "</div>")
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 31px; z-index: 999; margin-left: 315px;'>" + "<b>Ingredients:</b> " + self.ingr_list + "</div>")
 
-            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + link + "</div>")
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 31px; z-index: 999; margin-left: 615px;'>" + "<b>Link to the recipe:</b> " + link + "</div>")
 
-            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + source + "</div>")
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom:106px; z-index: 999; margin-left: 963px;'>" + "<b>Name of the source is:</b> " + source + "</div>")
 
-            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + source_link + "</div>")
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom:66px; z-index: 999; margin-left: 963px; '>" + "<b>Link to the source:</b> " + source_link + "</div>")
 
-            self.response.write("<div style='margin: 0 auto; width: 195px; display:block;'>" + str(version) + "</div>")
+            self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom:36px; z-index: 999; margin-left: 963px;'>" + "<b>The version number is:</b> " + str(version) + "</div>")
 
 
 

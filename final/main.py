@@ -16,7 +16,7 @@ class MainHandler(webapp2.RequestHandler):
 
         # self.response.write('Hello world!')
         p = UserInput()
-        p.inputs = [['recipe', 'text', 'Search Recipe'], ['Submit', 'submit']]
+        p.inputs = [['recipe', 'text', 'Enter Your Favorite Dish'], ['Submit', 'submit']]
         self.response.write("<div style='margin: 0 auto; width: 195px; display:block; margin-top: 25%;'>" + p.show_form() + "</div>")
 
         if self.request.GET:
@@ -36,36 +36,6 @@ class MainHandler(webapp2.RequestHandler):
 
 
             self.response.write(rv.title + rv.ingredients + rv.link + rv.source + rv.recipe_link + str(rv.version_num))
-
-
-
-            #
-            # url = "http://www.recipepuppy.com/api/?i=onions,garlic&q=" + recipe
-            #
-            #
-            # request = urllib2.Request(url)  #set up a variable that wil get the data from the url
-            #
-            # opener = urllib2.build_opener()  #create a var that will represent the object that is returned
-            #
-            # result = opener.open(request)  #using result to get the result from the url and request the data from the API
-            #
-
-
-
-
-
-            #
-            # self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 45px; z-index: 999;'>" +  name_list + "</div>")
-            #
-            # self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 31px; z-index: 999; margin-left: 315px;'>" + "<b>Ingredients:</b> " + self.ingr_list + "</div>")
-            #
-            # self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 31px; z-index: 999; margin-left: 615px;'>" + "<b>Link to the recipe:</b> " + link + "</div>")
-            #
-            # self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom:106px; z-index: 999; margin-left: 963px;'>" + "<b>Name of the source is:</b> " + source + "</div>")
-            #
-            # self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom:66px; z-index: 999; margin-left: 963px; '>" + "<b>Link to the source:</b> " + source_link + "</div>")
-            #
-            # self.response.write("<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom:36px; z-index: 999; margin-left: 963px;'>" + "<b>The version number is:</b> " + str(version) + "</div>")
 
 
 
@@ -115,63 +85,30 @@ class RecipeModel(object):
 
         self.__jsondoc = json.load(result)  #i am parsing my json doc here
 
-        #now I am going to get back specific pieces of data
-        #I am going to parse the data here
 
-
-        source = self.__jsondoc['title']
-
-        source_link = self.__jsondoc['href']
-
-        version = self.__jsondoc['version']
-
-        img = self.__jsondoc['results'][0]['thumbnail']
-
-        name_list = "<b>The name of this recipe is:</b> " + self.__jsondoc['results'][0]['title']
-
-        ingredients = self.__jsondoc['results'][0]['ingredients']
-
-        link = self.__jsondoc['results'][0]['href']
-
-        self.ingr_list = '' #create var that will hold the value for my items in the array of ingredients
-
-        for item in ingredients: #loop through the items in the array of ingredients
-            self.ingr_list += item  #add each item to the page
-
-
-    #now I am going to assgin the data returned from the json object to my recipe data object
-            self._array_do = []
-            #call my recipe data object method
-            array_object = RecipeData()
-            #now assign the corresponding values returned from json object to objects in recipe object
-            array_object.title = self.__jsondoc['results'][0]['title']
-            array_object.ingredients = self.__jsondoc['results'][0]['ingredients']
-            array_object.link = self.__jsondoc['results'][0]['href']
-            array_object.source = self.__jsondoc['href']
-            array_object.link_source = self.__jsondoc['href']
-            array_object.version_number = self.__jsondoc['version']
-            #now I am going to add these objects to my array
-            # self._array_do.append(array_object)
-            self._array_do.append(array_object.title)
-            self._array_do.append(array_object.ingredients)
-            self._array_do.append(array_object.link)
-            self._array_do.append(array_object.source)
-            self._array_do.append(array_object.link_source)
-            self._array_do.append(array_object.version_number)
-
-
-
-
-
-
-
+        #now I am going to assgin the data returned from the json object to my recipe data object
+        self._array_do = []
+        #call my recipe data object method
+        array_object = RecipeData()
+        #now assign the corresponding values returned from json object to objects in recipe object
+        array_object.title = self.__jsondoc['results'][0]['title']
+        array_object.ingredients = self.__jsondoc['results'][0]['ingredients']
+        array_object.link = self.__jsondoc['results'][0]['href']
+        array_object.source = self.__jsondoc['href']
+        array_object.link_source = self.__jsondoc['href']
+        array_object.version_number = self.__jsondoc['version']
+        #now I am going to add these objects to my array
+        # self._array_do.append(array_object)
+        self._array_do.append(array_object.title)
+        self._array_do.append(array_object.ingredients)
+        self._array_do.append(array_object.link)
+        self._array_do.append(array_object.source)
+        self._array_do.append(array_object.link_source)
+        self._array_do.append(array_object.version_number)
 
     @property
     def array_dos(self):
         return self._array_do
-
-
-
 
     @property
     def recipe(self):
@@ -197,21 +134,6 @@ class RecipeData(object):
         self.source = ' '
         self.link_source = ' '
         self.version_number = ' '
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -306,24 +228,6 @@ class UserInput(Page):
 
         new_form = new_form.format(**locals())
         return new_form
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

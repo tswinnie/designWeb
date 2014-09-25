@@ -17,7 +17,7 @@ class MainHandler(webapp2.RequestHandler):
         # self.response.write('Hello world!')
         p = UserInput()
         p.inputs = [['recipe', 'text', 'Enter Your Favorite Dish'], ['Submit', 'submit']]
-        self.response.write("<div style='margin: 0 auto; width: 195px; display:block; margin-top: 25%;'>" + p.show_form() + "</div>")
+        self.response.write("<div style='margin: 0 auto; width: 195px; display:block; margin-top: 25%;'>" + p.print_out() + "</div>")
 
         if self.request.GET:
             #get info from api
@@ -34,7 +34,7 @@ class MainHandler(webapp2.RequestHandler):
             rv.recipe_link = "<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom:66px; z-index: 999; margin-left: 963px; '>" + "<b>Link to the source:</b> " + rd.array_dos[4] + "</div>" #setting the var I created in my views class equal to the index value of object being returned in array_dos
             rv.version_num = "<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom:36px; z-index: 999; margin-left: 963px;'>" + "<b>The version number is:</b> " + str(rd.array_dos[5]) + "</div>" #setting the var I created in my views class equal to the index value of object being returned in array_dos
 
-
+            #write the returned data to the page
             self.response.write(rv.title + rv.ingredients + rv.link + rv.source + rv.recipe_link + str(rv.version_num))
 
 
@@ -141,7 +141,7 @@ class RecipeData(object):
 
 # I am going to create my page class
 
-class Page(object):
+class Page(object):  #my page class is the ABSTRACT Class
     def __init__(self):
         self.css = 'css/styles.css'
         self._head = '''
@@ -183,15 +183,13 @@ class Page(object):
 
         self.home = self._head + self._body + self._close
         self.home = self.home.format(**locals())
-        # return self.home
 
 
-        # return self._head + self._body + self._close
 
 
 #I am going to create my form class that will hold the user input value
 
-class UserInput(Page):
+class UserInput(Page):  #my userinput class is using INHERITANCE from the page class
     def __init__(self):
         #run the constructor function for my Page class
         super(UserInput, self).__init__()
@@ -199,8 +197,7 @@ class UserInput(Page):
         self._form_close = '</form>'
         self.__inputs = []
         self._form_inputs = ''
-        #<input type="text" value = "" name="recipe" placeholder="Search Recipes" />
-        #<input type="submit" value="Submit" />
+
 
     @property
     def inputs(self):
@@ -223,7 +220,7 @@ class UserInput(Page):
 
 
 #now I am going to create a function that will print out my form
-    def show_form(self):
+    def print_out(self): #POLYMORPHISM ALERT which is overriding a method above it
         new_form = self._head + self._form_open + self._form_inputs + self._form_close + self._body + self._close
 
         new_form = new_form.format(**locals())

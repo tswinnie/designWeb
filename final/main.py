@@ -14,21 +14,19 @@ import json  #added library to pars json data
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-        # self.response.write('Hello world!')
         p = UserInput()
         p.inputs = [['recipe', 'text', 'Enter Your Favorite Dish'], ['Submit', 'submit']]
         self.response.write("<div style='margin: 0 auto; width: 195px; display:block; margin-top: 25%;'>" + p.print_out() + "</div>")
 
         if self.request.GET:
             #get info from api
-            # recipe = self.request.GET['recipe']
             rd = RecipeModel()
             rd.recipe = self.request.GET['recipe']
             rd.callAPI()
 
             rv = RecipeView() # calling my view class
             rv.title = "<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 62px; z-index: 999;'>" + "<b>Name of the recipe is:</b>  " + "<br/>" + rd.array_dos[0] + "</div>"  #setting the var I created in my views class equal to the index value of object being returned in array_dos
-            rv.ingredients = "<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 31px; z-index: 999; margin-left: 315px;'>" + "<b>Ingredients:</b> " + rd.array_dos[1] + "</div>" #setting the var I created in my views class equal to the index value of object being returned in array_dos
+            rv.ingredients = "<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 33px; z-index: 999; margin-left: 315px;'>" + "<b>Ingredients:</b> " + rd.array_dos[1] + "</div>" #setting the var I created in my views class equal to the index value of object being returned in array_dos
             rv.link = "<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom: 31px; z-index: 999; margin-left: 615px;'>" + "<b>Link to the recipe:</b> " + rd.array_dos[2] + "</div>" #setting the var I created in my views class equal to the index value of object being returned in array_dos
             rv.source = "<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom:106px; z-index: 999; margin-left: 963px;'>" + "<b>Name of the source is:</b> " + rd.array_dos[3] + "</div>" #setting the var I created in my views class equal to the index value of object being returned in array_dos
             rv.recipe_link = "<div style='margin: 0 auto; width: 195px; display:block; float: left; position: absolute; bottom:66px; z-index: 999; margin-left: 963px; '>" + "<b>Link to the source:</b> " + rd.array_dos[4] + "</div>" #setting the var I created in my views class equal to the index value of object being returned in array_dos
@@ -40,7 +38,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
-#now I am going to create my recipe view
+#now I am going to create my recipe view class
 class RecipeView(object):
     ''' This class controls how the views are displayed to the user'''
     def __init__(self):
@@ -68,7 +66,7 @@ class RecipeView(object):
 class RecipeModel(object):
     ''' This class is responsible for fetching, sorting and parsing my data'''
     def __init__(self):
-        self.__url = "http://www.recipepuppy.com/api/?i=onions,garlic&q="
+        self.__url = "http://www.recipepuppy.com/api/?&q="
         self.__recipe = ''
         self.__jsondoc = ''
 
@@ -141,7 +139,7 @@ class RecipeData(object):
 
 # I am going to create my page class
 
-class Page(object):  #my page class is the ABSTRACT Class
+class Page(object):  #MY PAGE CLASS IS MY ABSTRACT Class
     def __init__(self):
         self.css = 'css/styles.css'
         self._head = '''
@@ -161,8 +159,6 @@ class Page(object):  #my page class is the ABSTRACT Class
         self._body = '''
 <div class="form-search">
 <h1>Let us help you choose the perfect meal today.</h1>
-
-
 </div>
 <div class="bottomPage"></div>
 
@@ -189,7 +185,7 @@ class Page(object):  #my page class is the ABSTRACT Class
 
 #I am going to create my form class that will hold the user input value
 
-class UserInput(Page):  #my userinput class is using INHERITANCE from the page class
+class UserInput(Page):  #MY USERINPUT CLASS IS MY INHERITANCE
     def __init__(self):
         #run the constructor function for my Page class
         super(UserInput, self).__init__()
@@ -220,7 +216,7 @@ class UserInput(Page):  #my userinput class is using INHERITANCE from the page c
 
 
 #now I am going to create a function that will print out my form
-    def print_out(self): #POLYMORPHISM ALERT which is overriding a method above it
+    def print_out(self): #POLYMORPHISM ALERT WHICH IS OVERRIDING THE PRINT OUT AOVE
         new_form = self._head + self._form_open + self._form_inputs + self._form_close + self._body + self._close
 
         new_form = new_form.format(**locals())
